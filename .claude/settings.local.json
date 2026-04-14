@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(grep -E \"\\\\.md$|\\\\.json$\")",
+      "Bash(find . -not -path ./node_modules/* -not -path ./dist/* -type f -o -type d)",
+      "Bash(curl -s http://localhost:5174/src/stores/game.js)",
+      "Bash(curl:*)",
+      "Bash(cp /home/eric/Documentos/ibge-api/favicon_io/favicon.ico /home/eric/Documentos/ibge-api/public/favicon.ico)",
+      "Bash(cp /home/eric/Documentos/ibge-api/favicon_io/favicon-16x16.png /home/eric/Documentos/ibge-api/public/favicon-16x16.png)",
+      "Bash(cp /home/eric/Documentos/ibge-api/favicon_io/favicon-32x32.png /home/eric/Documentos/ibge-api/public/favicon-32x32.png)",
+      "Bash(cp /home/eric/Documentos/ibge-api/favicon_io/apple-touch-icon.png /home/eric/Documentos/ibge-api/public/apple-touch-icon.png)",
+      "Bash(cp /home/eric/Documentos/ibge-api/favicon_io/android-chrome-192x192.png /home/eric/Documentos/ibge-api/public/android-chrome-192x192.png)",
+      "Bash(grep:*)"
+    ]
+  }
+}
