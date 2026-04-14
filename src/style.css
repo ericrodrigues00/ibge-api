@@ -523,6 +523,227 @@ button {
   letter-spacing: .04em;
 }
 
+/* ═══════════════ SECONDARY BUTTON ═══════════════ */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: .85rem 2rem;
+  border-radius: 100px;
+  border: 1.5px solid var(--border);
+  transition: border-color .2s ease, background .2s ease;
+  width: 100%;
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-muted);
+  background: rgba(30,41,59,.04);
+}
+
+/* ═══════════════ SCORE SUBMIT ═══════════════ */
+.submit-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.submit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  width: 100%;
+}
+
+.submit-label {
+  font-size: .7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--text-muted);
+  align-self: flex-start;
+}
+
+.submit-input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: .7rem 1rem;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.submit-input::placeholder { color: var(--text-subtle); }
+
+.submit-input:focus {
+  border-color: var(--text-muted);
+  box-shadow: 0 0 0 3px rgba(30,41,59,.06);
+}
+
+.submit-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.submit-btn:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn-skip {
+  font-size: .8rem;
+  color: var(--text-muted);
+  padding: .25rem .5rem;
+  border-radius: 6px;
+  transition: color .15s ease;
+  font-family: var(--font-body);
+}
+
+.btn-skip:hover { color: var(--text); }
+
+/* Loading */
+.submit-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  color: var(--text-muted);
+  font-size: .9rem;
+  padding: .5rem 0;
+}
+
+.submit-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border);
+  border-top-color: var(--text);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error */
+.submit-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  color: var(--wrong);
+  font-size: .9rem;
+}
+
+/* ═══════════════ RANKING ═══════════════ */
+.ranking-panel {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  width: 100%;
+}
+
+.rank-tabs {
+  display: flex;
+  background: var(--bg);
+  border-radius: 100px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.rank-tab {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: .8rem;
+  font-weight: 500;
+  padding: .45rem 1rem;
+  border-radius: 100px;
+  color: var(--text-muted);
+  transition: background .18s ease, color .18s ease;
+}
+
+.rank-tab.active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 1px 4px rgba(30,41,59,.08);
+}
+
+.rank-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.rank-item {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .5rem .6rem;
+  border-radius: 10px;
+  transition: background .15s ease;
+}
+
+.rank-item:hover { background: var(--bg); }
+
+.rank-item.is-self {
+  background: rgba(30,41,59,.05);
+  font-weight: 600;
+}
+
+.rank-pos {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  color: var(--text-subtle);
+  min-width: 1.4rem;
+  text-align: right;
+}
+
+.rank-item:nth-child(1) .rank-pos { color: #d97706; }
+.rank-item:nth-child(2) .rank-pos { color: var(--text-muted); }
+.rank-item:nth-child(3) .rank-pos { color: #92400e; }
+
+.rank-name {
+  flex: 1;
+  font-size: .9rem;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rank-score {
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.rank-item.is-self .rank-score { color: var(--text); }
+
+.rank-empty {
+  font-size: .85rem;
+  color: var(--text-subtle);
+  text-align: center;
+  padding: .75rem;
+}
+
 /* ═══════════════ TRANSITIONS ═══════════════ */
 
 /* Screen swap */
