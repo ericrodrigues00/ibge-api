@@ -108,10 +108,21 @@
                 </div>
               </div>
 
-              <button class="btn-play" @click="startGame">
-                <span>Jogar de novo</span>
-                <span class="btn-arrow">→</span>
-              </button>
+              <ScoreSubmit
+                v-if="showRanking"
+                :score="store.score"
+                @skip="showRanking = false"
+              />
+
+              <template v-if="!showRanking">
+                <button class="btn-secondary" @click="showRanking = true">
+                  Publicar score
+                </button>
+                <button class="btn-play" @click="startGame">
+                  <span>Jogar de novo</span>
+                  <span class="btn-arrow">→</span>
+                </button>
+              </template>
             </div>
           </div>
         </Transition>
@@ -122,11 +133,13 @@
 </template>
 
 <script setup>
-import { computed, watch, onUnmounted } from 'vue'
+import { ref, computed, watch, onUnmounted } from 'vue'
 import { useGameStore } from './stores/game'
 import NameCard from './components/NameCard.vue'
+import ScoreSubmit from './components/ScoreSubmit.vue'
 
 const store = useGameStore()
+const showRanking = ref(false)
 
 // ── Sound System ──────────────────────────────────────
 let audioCtx = null
@@ -187,6 +200,7 @@ function clearTimer() {
 
 watch(() => store.phase, (phase) => {
   clearTimer()
+  if (phase === 'gameover') showRanking.value = false
   if (phase !== 'revealing') return
 
   if (store.lastResult === 'correct') sounds.correct()
